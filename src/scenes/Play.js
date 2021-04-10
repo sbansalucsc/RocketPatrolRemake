@@ -8,6 +8,7 @@ class Play extends Phaser.Scene {
     preload() {
         this.load.image('starfield', 'assets/starfield.png');
         this.load.image('rocket', 'assets/rocket.png');
+        this.load.image('spaceship', 'assets/spaceship.png');
     }
 
     create() {
@@ -19,6 +20,24 @@ class Play extends Phaser.Scene {
             game.config.width/2,
             game.config.height - borderUISize - borderPadding,
             'rocket'
+        );
+        this.ship1 = new Ship(
+            this,
+            100,
+            200,
+            'spaceship'
+        );
+        this.ship2 = new Ship(
+            this,
+            300,
+            240,
+            'spaceship'
+        );
+        this.ship3 = new Ship(
+            this,
+            380,
+            300,
+            'spaceship'
         );
         
         // green UI background
@@ -48,5 +67,9 @@ class Play extends Phaser.Scene {
     update() {
         this.starfield.tilePositionX -= 4;
         this.p1Rocket.update();
+
+        this.ship1.update();
+        this.ship2.update();
+        this.ship3.update();
     }
 }
