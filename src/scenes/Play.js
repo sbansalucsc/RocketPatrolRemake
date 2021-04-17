@@ -9,6 +9,7 @@ class Play extends Phaser.Scene {
         this.load.image('starfield', 'assets/starfield.png');
         this.load.image('rocket', 'assets/rocket.png');
         this.load.image('spaceship', 'assets/spaceship.png');
+        this.load.image('bonusship', 'assets/BonusPixelShip.png');
         this.load.spritesheet('explosion', './assets/explosion.png', 
         {frameWidth: 64, frameHeight: 32, startFrame: 0, endFrame: 9});
     }
@@ -34,7 +35,9 @@ class Play extends Phaser.Scene {
         this.ship3 = new Ship(this, game.config.width, 
             borderUISize*6 + borderPadding*4, 
             'spaceship', 0, 10).setOrigin(0,0);
-        
+        this.bonusship = new BonusShip(this, game.config.width + borderUISize*5, 
+            borderUISize*4 + borderPadding*20,
+            'bonusship', 0, 100).setOrigin(0,0); // creates a bonus ship object
         // green UI background
         this.add.rectangle(0, 
             borderUISize + borderPadding, 
@@ -115,6 +118,7 @@ class Play extends Phaser.Scene {
             this.ship1.update();
             this.ship2.update();
             this.ship3.update();
+            this.bonusship.update();
 
         }
         // check collisions
@@ -129,6 +133,11 @@ class Play extends Phaser.Scene {
           if (this.checkCollision(this.p1Rocket, this.ship1)) {
             this.p1Rocket.reset();
             this.shipExplode(this.ship1);
+          }
+
+          if (this.checkCollision(this.p1Rocket, this.bonusship)) {
+            this.p1Rocket.reset();
+            this.shipExplode(this.bonusship); //added collison detection for bonus ship
           }
         
         
