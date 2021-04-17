@@ -83,6 +83,8 @@ class Play extends Phaser.Scene {
             
             // GAME OVER flag
             this.gameOver = false;
+
+            
             
             
             // 60-second play clock
@@ -93,9 +95,7 @@ class Play extends Phaser.Scene {
             this.gameOver = true;
             }, null, this);
 
-
-        
-
+            
 
     }
 

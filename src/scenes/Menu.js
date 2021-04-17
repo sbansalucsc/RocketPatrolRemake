@@ -10,6 +10,7 @@ class Menu extends Phaser.Scene{
         this.load.audio('sfx_select', './assets/blip_select12.wav');
         this.load.audio('sfx_explosion', './assets/explosion38.wav');
         this.load.audio('sfx_rocket', './assets/rocket_shot.wav');
+        this.load.audio('music', './assets/music_pioxonaq_agressive_lightning.mp3') // Rocket Mod#2: Added music from https://www.zapsplat.com/sound-effect-category/electronica/
       }
 
     create(){
@@ -43,7 +44,21 @@ class Menu extends Phaser.Scene{
           // define keys
             keyLEFT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.LEFT);
             keyRIGHT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT);
+          //add music
+          // referenced from https://www.youtube.com/watch?v=COncYQLGJS8
+            this.music = this.sound.add('music');
 
+            let musicConfig = {
+              mute: false,
+              volume:1,
+              rate:1,
+              detune:0,
+              seek:0,
+              loop: true,
+              delay:0,
+
+            }
+          this.music.play(musicConfig);
 
     }
 
