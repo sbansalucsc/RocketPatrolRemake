@@ -7,7 +7,7 @@ class Play extends Phaser.Scene {
 
     preload() {
         this.load.image('banner', 'assets/Banner.png');
-        this.load.image('starfield', 'assets/starfield.png');
+        this.load.image('starfield', 'assets/NewBackground.png');
         this.load.image('rocket', 'assets/SpaceRocket.png');
         this.load.image('spaceship', 'assets/Space_Ship.png');
         this.load.image('bonusship', 'assets/BonusPixelShip.png');
@@ -39,9 +39,9 @@ class Play extends Phaser.Scene {
         this.bonusship = new BonusShip(this, game.config.width + borderUISize*5, 
             borderUISize*4 + borderPadding*20,
             'bonusship', 0, 100).setOrigin(0,0); // creates a bonus ship object
-        // green UI background
+        // newUIBackground
         this.add.tileSprite(0, 
-            borderUISize + borderPadding, 
+            borderUISize, 
             game.config.width, 
             borderUISize * 2.5,'banner',
             ).setOrigin(0,0);
