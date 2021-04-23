@@ -52,10 +52,10 @@ class Play extends Phaser.Scene {
             borderUISize * 2.5,'banner',
             ).setOrigin(0,0);
         // white borders
-        this.add.rectangle(0, 0, game.config.width, borderUISize, 0xFFFFFF).setOrigin(0 ,0);
-        this.add.rectangle(0, game.config.height - borderUISize, game.config.width, borderUISize, 0xFFFFFF).setOrigin(0 ,0);
-        this.add.rectangle(0, 0, borderUISize, game.config.height, 0xFFFFFF).setOrigin(0 ,0);
-        this.add.rectangle(game.config.width - borderUISize, 0, borderUISize, game.config.height, 0xFFFFFF).setOrigin(0 ,0);
+        this.add.rectangle(0, 0, game.config.width, borderUISize, 0x9900ff).setOrigin(0 ,0);
+        this.add.rectangle(0, game.config.height - borderUISize, game.config.width, borderUISize, 0x9900ff).setOrigin(0 ,0);
+        this.add.rectangle(0, 0, borderUISize, game.config.height, 0x9900ff).setOrigin(0 ,0);
+        this.add.rectangle(game.config.width - borderUISize, 0, borderUISize, game.config.height, 0x9900ff).setOrigin(0 ,0);
 
         keyF = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.F);
         keyR = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.R);
