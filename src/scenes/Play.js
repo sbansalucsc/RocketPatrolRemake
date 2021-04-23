@@ -28,7 +28,7 @@ class Play extends Phaser.Scene {
             this,
             game.config.width/2,
             game.config.height - borderUISize - borderPadding,
-            'rocket').setOrigin(0.5,0);
+            'rocket').setOrigin(2,0);
 
         this.ship1 = new Ship(this, 
             game.config.width + borderUISize*6, 
