@@ -1,6 +1,5 @@
 
-
-class Rocket extends Phaser.GameObjects.Sprite {
+class Rocket2 extends Phaser.GameObjects.Sprite {
     constructor(scene, x, y, texture, frame) {
         super(scene, x , y, texture, frame);
         scene.add.existing(this);
@@ -17,15 +16,15 @@ class Rocket extends Phaser.GameObjects.Sprite {
             }
 
         } else {
-            if(keyA.isDown) {
+            if(keyLEFT.isDown) {
                 this.x -= this.movementSpeed;
             }
     
-            if(keyD.isDown) {
+            if(keyRIGHT.isDown) {
                 this.x += this.movementSpeed;
             }
 
-            if(Phaser.Input.Keyboard.JustDown(keyF) && !this.isFiring) {
+            if(Phaser.Input.Keyboard.JustDown(keyH) && !this.isFiring) {
                 this.isFiring = true;
                 this.sfxRocket.play();  // play sfx
             }

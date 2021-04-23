@@ -24,6 +24,12 @@ class Play extends Phaser.Scene {
             game.config.width/2,
             game.config.height - borderUISize - borderPadding,
             'rocket').setOrigin(0.5,0);
+        this.p2Rocket = new Rocket2(
+            this,
+            game.config.width/2,
+            game.config.height - borderUISize - borderPadding,
+            'rocket').setOrigin(0.5,0);
+
         this.ship1 = new Ship(this, 
             game.config.width + borderUISize*6, 
             borderUISize*4, 
@@ -55,6 +61,9 @@ class Play extends Phaser.Scene {
         keyR = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.R);
         keyLEFT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.LEFT);
         keyRIGHT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT);
+        keyA = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A);
+        keyD = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
+        keyH = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.H);
 
         this.anims.create({
             key: 'explode',
@@ -115,6 +124,7 @@ class Play extends Phaser.Scene {
         this.starfield.tilePositionX -= 4;
         if(!this.gameOver){
             this.p1Rocket.update();
+            this.p2Rocket.update();
             this.ship1.update();
             this.ship2.update();
             this.ship3.update();
@@ -138,6 +148,22 @@ class Play extends Phaser.Scene {
           if (this.checkCollision(this.p1Rocket, this.bonusship)) {
             this.p1Rocket.reset();
             this.shipExplode(this.bonusship); //added collison detection for bonus ship
+          }
+          if (this.checkCollision(this.p2Rocket, this.ship1)) {
+            this.p2Rocket.reset();
+            this.shipExplode(this.ship1);
+          }
+          if (this.checkCollision(this.p2Rocket, this.ship2)) {
+            this.p2Rocket.reset();
+            this.shipExplode(this.ship2);
+          }
+          if (this.checkCollision(this.p2Rocket, this.ship3)) {
+            this.p2Rocket.reset();
+            this.shipExplode(this.ship3);
+          }
+          if (this.checkCollision(this.p2Rocket, this.bonusship)) {
+            this.p2Rocket.reset();
+            this.shipExplode(this.bonusship);
           }
         
         

@@ -44,6 +44,10 @@ class Menu extends Phaser.Scene{
           // define keys
             keyLEFT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.LEFT);
             keyRIGHT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT);
+            keyA = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A);
+            keyD = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
+            keyH = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.H);
+
           //add music
           // referenced from https://www.youtube.com/watch?v=COncYQLGJS8
             this.music = this.sound.add('music');
