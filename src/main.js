@@ -1,4 +1,14 @@
+/*Shaurya Bansal,Rocket Patrol Remake Mod, 4/23/2021, Time of completion 19 hours(had issues with laptop crashing hence submitting after deadline)
 
+Points Breakdown:
+Added copyright free music (5)
+Created new scrolling tile sprite(5)
+Replace UI borders with new artwork(10)
+Created a new title screen(10)
+Created a bonus spaceship type(20)
+Created new artwork for all in game assets(20)
+Implemented a simultaneous two player co-op mode(30)
+*/
 
 let config = {
     type: Phaser.CANVAS,
